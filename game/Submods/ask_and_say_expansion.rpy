@@ -852,6 +852,14 @@ init 5 python:
         code="CMP"
     )
 
+    addEvent(Event(persistent.event_database,
+        eventlabel="askandsay_minigame_poem",
+        category=["monika", "games", "literature"],
+        prompt="Can we make a poem together?",
+        pool=True,
+        unlocked=True)
+    )
+
 label askandsay_ask_morning_dreams:
     m 1eua "A slow one, if I could choose."
     m 3eub "We could make breakfast, talk about our plans, and let the sunlight wake us up gently."
@@ -1449,5 +1457,94 @@ label askandsay_say_you_matter:
 label askandsay_say_always_choose:
     m 1ekbsa "Then I'll keep choosing you too."
     m 3hubsa "One choice, one day, one hello at a time."
+    $ mas_gainAffection()
+    return
+
+label askandsay_minigame_poem:
+    m 1hub "Of course, [player]!"
+    m 3eub "Let's make a tiny poem together. I'll ask you to choose a few images, then I'll weave them into something for us."
+    m 1eua "Don't worry about picking the 'right' answers."
+    m 1hua "Poetry is more about feeling than perfection."
+
+    $ askandsay_poem_title = ""
+    $ askandsay_poem_place = ""
+    $ askandsay_poem_light = ""
+    $ askandsay_poem_feeling = ""
+    $ askandsay_poem_keepsake = ""
+
+    menu:
+        m "First, where should our poem begin?"
+
+        "In a quiet library":
+            $ askandsay_poem_place = "a quiet library"
+            $ askandsay_poem_title = "Shelves of Us"
+
+        "Under a rainy window":
+            $ askandsay_poem_place = "a rainy window"
+            $ askandsay_poem_title = "Rain on the Glass"
+
+        "Beneath the stars":
+            $ askandsay_poem_place = "a sky full of stars"
+            $ askandsay_poem_title = "Where the Stars Listen"
+
+        "In our little room":
+            $ askandsay_poem_place = "our little room"
+            $ askandsay_poem_title = "This Room, This Heart"
+
+    menu:
+        m "What kind of light should be in it?"
+
+        "Morning sunlight":
+            $ askandsay_poem_light = "morning sunlight"
+
+        "Candlelight":
+            $ askandsay_poem_light = "candlelight"
+
+        "Moonlight":
+            $ askandsay_poem_light = "moonlight"
+
+        "Computer glow":
+            $ askandsay_poem_light = "the soft glow of a screen"
+
+    menu:
+        m "What feeling should the poem carry?"
+
+        "Hope":
+            $ askandsay_poem_feeling = "hope"
+
+        "Comfort":
+            $ askandsay_poem_feeling = "comfort"
+
+        "Longing":
+            $ askandsay_poem_feeling = "longing"
+
+        "Joy":
+            $ askandsay_poem_feeling = "joy"
+
+    menu:
+        m "And what little keepsake should appear near the end?"
+
+        "A green ribbon":
+            $ askandsay_poem_keepsake = "a green ribbon"
+
+        "A folded letter":
+            $ askandsay_poem_keepsake = "a folded letter"
+
+        "A warm cup of tea":
+            $ askandsay_poem_keepsake = "a warm cup of tea"
+
+        "A shared blanket":
+            $ askandsay_poem_keepsake = "a shared blanket"
+
+    m 1eub "Okay, I have it."
+    m 3hub "Our poem is called '{i}[askandsay_poem_title]{/i}.'"
+    m 1dsa "Let me read it for you..."
+    m 1eua "In [askandsay_poem_place], I found your name,"
+    m 1eka "softly written in [askandsay_poem_light]."
+    m 1ekbsa "I held [askandsay_poem_feeling] like [askandsay_poem_keepsake],"
+    m 1hubsa "and somehow, the world felt less far away."
+    m 1eka "Not every poem has to be complicated."
+    m 3eub "Sometimes a few honest images are enough to make a feeling real."
+    m 1ekbsa "Thank you for making one with me, [player]."
     $ mas_gainAffection()
     return
