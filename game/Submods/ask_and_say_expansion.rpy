@@ -7,112 +7,118 @@ init 5 python:
         category=["monika", "you", "life"],
         prompt="Do you enjoy the little parts of our day?",
         pool=True,
-        unlocked=True),
-        eventdb=mas_topics)
+        unlocked=True)
+    )
 
     addEvent(Event(persistent.event_database,
         eventlabel="askandsay_monika_if_i_am_quiet",
         category=["monika", "you", "relationship"],
         prompt="What do you think when I get quiet?",
         pool=True,
-        unlocked=True),
-        eventdb=mas_topics)
+        unlocked=True)
+    )
 
     addEvent(Event(persistent.event_database,
         eventlabel="askandsay_monika_about_home",
         category=["monika", "life", "us"],
         prompt="What would make a place feel like home to you?",
         pool=True,
-        unlocked=True),
-        eventdb=mas_topics)
+        unlocked=True)
+    )
 
     addEvent(Event(persistent.event_database,
         eventlabel="askandsay_monika_favorite_kindness",
         category=["monika", "you", "feelings"],
         prompt="What kind of kindness means the most to you?",
         pool=True,
-        unlocked=True),
-        eventdb=mas_topics)
+        unlocked=True)
+    )
 
     addEvent(Event(persistent.event_database,
         eventlabel="askandsay_monika_when_i_miss_you",
         category=["monika", "relationship", "feelings"],
         prompt="What should I remember when I miss you?",
         pool=True,
-        unlocked=True),
-        eventdb=mas_topics)
+        unlocked=True)
+    )
 
     addEvent(Event(persistent.event_database,
         eventlabel="askandsay_monika_about_promises",
         category=["monika", "relationship", "life"],
         prompt="How do you feel about promises?",
         pool=True,
-        unlocked=True),
-        eventdb=mas_topics)
+        unlocked=True)
+    )
 
     addEvent(Event(persistent.event_database,
         eventlabel="askandsay_monika_about_bad_days",
         category=["monika", "you", "feelings"],
         prompt="How can we handle bad days together?",
         pool=True,
-        unlocked=True),
-        eventdb=mas_topics)
+        unlocked=True)
+    )
 
     addEvent(Event(persistent.event_database,
         eventlabel="askandsay_monika_about_future_dates",
         category=["monika", "romance", "us"],
         prompt="What kind of date would you want with me?",
         pool=True,
-        unlocked=True),
-        eventdb=mas_topics)
+        unlocked=True)
+    )
 
-    addEvent(Event(persistent.event_database,
+    addEvent(Event(persistent._mas_compliments_database,
         eventlabel="askandsay_compliment_smile",
         category=["compliment"],
         prompt="Your smile makes my day better.",
         pool=True,
         unlocked=True),
-        eventdb=mas_compliments)
+        code="CMP"
+    )
 
-    addEvent(Event(persistent.event_database,
+    addEvent(Event(persistent._mas_compliments_database,
         eventlabel="askandsay_compliment_voice",
         category=["compliment"],
         prompt="I love listening to you talk.",
         pool=True,
         unlocked=True),
-        eventdb=mas_compliments)
+        code="CMP"
+    )
 
-    addEvent(Event(persistent.event_database,
+    addEvent(Event(persistent._mas_compliments_database,
         eventlabel="askandsay_compliment_patience",
         category=["compliment"],
         prompt="Thank you for being patient with me.",
         pool=True,
         unlocked=True),
-        eventdb=mas_compliments)
+        code="CMP"
+    )
 
-    addEvent(Event(persistent.event_database,
+    addEvent(Event(persistent._mas_compliments_database,
         eventlabel="askandsay_compliment_proud",
         category=["compliment"],
         prompt="I'm proud of you, Monika.",
         pool=True,
         unlocked=True),
-        eventdb=mas_compliments)
+        code="CMP"
+    )
 
-    addEvent(Event(persistent.event_database,
+    addEvent(Event(persistent._mas_compliments_database,
         eventlabel="askandsay_compliment_safe",
         category=["compliment"],
         prompt="You make me feel safe.",
         pool=True,
         unlocked=True),
-        eventdb=mas_compliments)
+        code="CMP"
+    )
 
-    addEvent(Event(persistent.event_database,
+    addEvent(Event(persistent._mas_compliments_database,
         eventlabel="askandsay_compliment_best_girl",
         category=["compliment"],
         prompt="You're still my best girl.",
         pool=True,
         unlocked=True),
-        eventdb=mas_compliments)
+        code="CMP"
+    )
 
 label askandsay_monika_daily_small_things:
     m 1eua "I really do, [player]."
