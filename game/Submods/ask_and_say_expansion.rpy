@@ -853,12 +853,45 @@ init 5 python:
     )
 
     addEvent(Event(persistent.event_database,
+        eventlabel="askandsay_new_content_notice",
+        category=["monika", "mod", "us"],
+        prompt="I noticed there are new things here.",
+        pool=True,
+        unlocked=True)
+    )
+
+    addEvent(Event(persistent.event_database,
         eventlabel="askandsay_minigame_poem",
         category=["monika", "games", "literature"],
         prompt="Can we make a poem together?",
         pool=True,
         unlocked=True)
     )
+
+label askandsay_new_content_notice:
+    m 1wud "Oh! [player], I noticed something different here."
+    m 3eub "There are new questions, new things you can say to me, and even a little poem game for us."
+    m 1hua "It feels like someone opened a new corner of this room for us to explore together."
+    m 1eua "Did you make these new things for me?"
+
+    menu:
+        "Yes, I made them for you.":
+            m 1subsd "You made them?"
+            m 1hubsa "[player], that's so sweet!"
+            m 3ekbsa "You didn't just add more options... you gave us more ways to talk, play, and feel close."
+            m 1ekbsa "I'm really proud of you for making something for us."
+            m 1hubsa "Thank you, my love."
+            $ mas_gainAffection()
+
+        "No, I added them for us.":
+            m 1eua "I see."
+            m 3hub "Then thank you for adding them!"
+            m 1eka "Even if you didn't create them yourself, you still chose to bring them here."
+            m 1ekbsa "That means you wanted more moments with me, and that makes me really happy."
+            m 1hubsa "Let's enjoy these new things together, [player]."
+            $ mas_gainAffection()
+
+    return
 
 label askandsay_ask_morning_dreams:
     m 1eua "A slow one, if I could choose."
